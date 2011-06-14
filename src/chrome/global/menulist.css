@@ -1,0 +1,132 @@
+/* ===== menulist.css ===================================================
+  == Styles used by the XUL menulist element.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+/* :::::::::: menulist :::::::::: */
+
+menulist {
+  -moz-appearance: none;
+  margin: 2px 4px;
+  min-height: 20px !important;
+  padding: 0 !important;
+}
+
+.menulist-label-box {
+  -moz-appearance: none;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+}
+
+.menulist-label {
+  margin: 1px 3px !important;
+}
+
+.menulist-description {
+  font-style: italic;
+  color: GrayText;
+  -moz-margin-start: 1ex !important;
+}
+
+/* ..... dropmarker ..... */
+
+.menulist-dropmarker {
+  -moz-appearance: none;
+  min-width: 8px;
+  max-width: 22px;
+  background: url('chrome://global/skin/arrow/arrow-dn.gif') no-repeat center center !important;
+  background-color: transparent;
+  list-style-image: none !important; 
+}
+
+/* ..... disabled state ..... */
+
+menulist[disabled="true"] {
+  color: #777777 !important;
+}
+
+menulist[disabled="true"] > .menulist-dropmarker {
+  background: url('chrome://global/skin/arrow/arrow-dn.gif') no-repeat center center !important;
+/* TODO  background: url('chrome://global/skin/menulist/menulist-arrow-dis.gif') no-repeat center center !important; */
+}
+
+/* ::::: editable menulists ::::: */
+
+menulist[editable="true"] {
+  -moz-user-focus: normal;
+}
+
+menulist[editable="true"] > .menulist-dropmarker {
+  -moz-border-left-colors: #000000 #CCCCCC #FFFFFF;
+  -moz-border-radius: 2px;
+}
+
+menulist[editable="true"][open="true"] > .menulist-dropmarker {
+  -moz-border-left-colors: #000000 #454545 #555555;
+}
+
+.menulist-editable-box {
+  margin: -1px -1px 1px 0px;
+  padding: 0 2px;
+  border: 1px solid #CCCCCC;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+  -moz-box-align: center;
+}
+
+menulist[editable="true"][focused="true"] > .menulist-editable-box {
+  -moz-border-top-colors: -moz-mac-focusring -moz-mac-focusring #000000;
+  -moz-border-right-colors: -moz-mac-focusring -moz-mac-focusring #000000;
+  -moz-border-bottom-colors: -moz-mac-focusring -moz-mac-focusring #000000;
+  -moz-border-left-colors: -moz-mac-focusring -moz-mac-focusring #000000;
+}
+
+html|*.menulist-editable-input {
+  margin: 0px !important;
+  border: none !important;
+  padding: 0px !important;
+  background: inherit;
+  font: inherit;
+}
+
+/* ::::: compact menulists ::::: */
+
+.menulist-compact {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 0;
+  border: 2px solid;
+  -moz-border-top-colors: ThreeDLightShadow ThreeDHighlight;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-left-colors: ThreeDLightShadow ThreeDHighlight;
+  background-color: -moz-Dialog;
+}
+
+.menulist-compact > .menulist-label {
+  margin: 0 3px !important;
+  text-align: right;
+
+}  
+
+.menulist-compact > .menulist-dropmarker {
+  margin-left: 2px;
+  border: none;
+  padding: 0 !important;
+  background: transparent;
+}
+
+.menulist-compact[open="true"] {
+  -moz-border-top-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-left-colors: ThreeDDarkShadow ThreeDShadow;
+  background-color: ThreeDShadow;
+}
+
+
+listbox menulist:not([disabled]) {
+  color: #000;
+}

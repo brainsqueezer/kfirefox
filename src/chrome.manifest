@@ -1,0 +1,5 @@
+skin	browser			kde4	chrome/browser/
+skin	global			kde4	chrome/global/
+skin	mozapps			kde4	chrome/mozapps/
+skin	communicator	kde4 chrome/communicator/
+skin	help			kde4	chrome/help/

@@ -1,0 +1,78 @@
+/* ===== dialog.css =====================================================
+  == Styles used by the XUL dialog element.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: dialog ::::: */
+
+#commonDialog > image {
+  -moz-margin-end: 14px !important;
+}
+
+#commonDialog > .dialog-button-box {
+  -moz-margin-start: 80px;
+}
+
+dialog { 
+  -moz-appearance: dialog;
+  padding: 14px;
+}
+
+/* ::::: dialog buttons ::::: */
+
+.dialog-button {
+  font: menu;
+  margin: 7px 6px 4px 6px;
+}
+
+/* ::::: dialog header ::::: */
+
+dialogheader {
+  margin: 0px 5px 5px 5px;
+  padding: 5px 8px;
+}
+
+.dialogheader-title {
+  margin: 0px !important;
+  font-size: larger;
+  font-weight: bold;
+  display: none;
+}
+
+/* ::::: large dialog header ::::: */
+
+.header-large {
+  -moz-box-orient: vertical;
+  margin: -14px -14px 0;
+  padding: 12px 5px 12px 25px;
+}
+
+.header-large > .dialogheader-title {
+  font: inherit;
+  font-weight: bold;
+}
+
+.header-large > .dialogheader-description {
+  margin-left: 12px !important;
+}
+
+.dialogheader-description {
+	font-weight: bold !important;
+}
+
+.dialogheader-title {
+	font-weight: bold !important;
+}
+
+#loginContainer {
+	padding-top: 10px;
+}
+
+#findDialog, #findDialog > menu, #findDialog > groupbox {
+	font: menu !important;
+}
+
+#dialog.caseSensitive {
+	margin-top: 8px;
+}

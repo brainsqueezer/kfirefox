@@ -1,0 +1,173 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.findbar-closebutton {
+  border: 1px solid transparent;
+  padding: 3px 2px 4px 2px !important;
+  list-style-image: url("chrome://global/skin/icons/closeSidebar.png");
+  -moz-appearance: none;
+  -moz-image-region: rect(0px, 14px, 14px, 0px);
+}
+
+.findbar-closebutton > .toolbarbutton-icon {
+  -moz-margin-end: 0px !important;
+  -moz-padding-end: 2px !important;
+  -moz-padding-start: 2px !important;
+}
+
+.findbar-closebutton:hover {
+  -moz-image-region: rect(0px, 28px, 14px, 14px);
+}
+
+.findbar-closebutton:hover:active {
+  -moz-image-region: rect(0px, 42px, 14px, 28px);
+}
+
+findbar {
+  background-color: #e6e6e6;
+  -moz-appearance: none !important;
+  border-top: 1px solid;
+padding-top: 4px !important;
+  -moz-border-top-colors: #c5c6c5 !important;
+  border-bottom: 1px solid;
+  -moz-border-bottom-colors: transparent;
+  min-width: 1px;
+font-size: 11px;
+color: #101010;
+}
+
+
+
+/* find-next button */
+
+.findbar-find-next {
+  list-style-image: url("chrome://global/skin/icons/find.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+.findbar-find-next:hover {
+  -moz-image-region: rect(16px 16px 32px 0px);
+}
+
+.findbar-find-next[disabled="true"] {
+  -moz-image-region: rect(32px 16px 48px 0px) !important;
+}
+
+/* find-previous button */
+
+.findbar-find-previous {
+  list-style-image: url("chrome://global/skin/icons/find.png");
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+.findbar-find-previous:hover {
+  -moz-image-region: rect(16px 32px 32px 16px);
+}
+
+.findbar-find-previous[disabled="true"] {
+  -moz-image-region: rect(32px 32px 48px 16px) !important;
+}
+
+
+/* highlight button */
+
+.findbar-highlight {
+  list-style-image: url("chrome://global/skin/icons/find.png");
+  -moz-image-region: rect(0px 48px 16px 32px);
+font-size: 11px;
+color: #101010;
+}
+
+.findbar-highlight:hover {
+  -moz-image-region: rect(16px 48px 32px 32px);
+}
+
+.findbar-highlight[disabled="true"] {
+  -moz-image-region: rect(32px 48px 48px 32px) !important;
+}
+
+.findbar-highlight:active, .findbar-highlight[checked="true"] {
+  -moz-image-region: rect(48px 48px 64px 32px);
+}
+
+.findbar-highlight[checked="true"]:hover {
+  -moz-image-region: rect(64px 48px 80px 32px);
+}
+
+.find-status-icon {
+  list-style-image: none;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  -moz-margin-start: 12px;
+  -moz-margin-end: 0px;
+  width: 16px;
+  height: 16px;
+}
+
+.findbar-find-status {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  -moz-margin-start: 3px;
+  -moz-margin-end: 0px;
+  padding: 2px;
+}
+
+.find-status-icon[status="notfound"] {
+  list-style-image: url("chrome://global/skin/icons/notfound.png");
+}
+
+.findbar-textbox {
+  -moz-binding: url("chrome://global/content/bindings/findbar.xml#findbar-textbox");
+  -moz-appearance: none;
+  border: none;
+  margin: 0px;
+}
+
+.findbar-textbox[status="notfound"] {
+  background-color: #FF6666;
+  color: #FFFFFF;
+}
+
+findbar[flash="true"] > .findbar-container > .find-field-container > .findbar-textbox {
+  background-color: yellow;
+}
+
+.find-status-icon[status="wrapped"] {
+  list-style-image: url("chrome://global/skin/icons/wrap.png");
+}
+
+.find-field-container, textbox {
+  -moz-appearance: none; /* was textfield */
+background-color: white;
+  border: 1px solid #a4a5a4;
+padding: 2px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-bottomright: 4px;
+}
+
+
+
+.find-field-container:focus, .find-field-container:hover {
+  border: 1px solid #3179c5 !important;
+
+}
+
+/* common */
+
+.findbar-find-next, .findbar-find-previous, .findbar-highlight {
+  background-color: #efefef;
+  border: 1px solid #bdb2b4;
+  border-bottom: 1px solid #949194;
+font-size: 11px;
+color: #101010;
+margin-left: 4px;
+margin-right: 4px;
+}
+
+.findbar-find-next:focus, .findbar-find-next:hover,
+.findbar-find-previous:focus, .findbar-find-previous:hover,
+.findbar-find-highlight:focus, .findbar-find-highlight:hover {
+  border-color: #73b6ff !important;
+}
+

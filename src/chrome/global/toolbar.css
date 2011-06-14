@@ -1,0 +1,150 @@
+/*
+ * The contents of this file are subject to the Netscape Public
+ * License Version 1.1 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of
+ * the License at http://www.mozilla.org/NPL/
+ *
+ * Software distributed under the License is distributed on an "AS
+ * IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+ * implied. See the License for the specific language governing
+ * rights and limitations under the License.
+ *
+ * The Original Code is Mozilla Communicator client code, released
+ * March 31, 1998.
+ *
+ * The Initial Developer of the Original Code is Netscape
+ * Communications Corporation. Portions created by Netscape are
+ * Copyright (C) 1998-2001 Netscape Communications Corporation. All
+ * Rights Reserved.
+ *
+ * Contributor(s):
+ *   Joe Hewitt (hewitt@netscape.com)
+ */
+
+/* ===== toolbar.css ====================================================
+  == Styles used by XUL toolbar-related elements.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: toolbox ::::: */ 
+
+toolbox {
+  -moz-appearance: toolbox;
+  background-color: #e6e6e6;
+/*  border-top: 2px solid;
+  -moz-border-top-colors: ThreeDShadow ThreeDHighlight;
+*/
+}
+
+
+/* ::::: toolbar & menubar ::::: */ 
+
+/*
+
+sin esto e como queda chulo, igual se puede cambiar a apariencia de toolbar
+toolbar, menubar {
+  -moz-appearance: toolbar;
+}
+
+*/
+
+
+toolbar[mode="icons"] .toolbarbutton-text {
+  display: none;
+}
+
+toolbar[mode="text"] .toolbarbutton-icon {
+  display: none;
+}
+
+
+toolbar { 
+  min-width: 1px; 
+  min-height: 19px; 
+  border-top: 0px solid #F0F0F0;
+  border-bottom: 0px solid #929292;
+} 
+
+toolbar[type="menubar"], menubar { 
+  min-width: 0px; 
+  border: 0px !important;
+  background-color: #E7E7E7;
+  color: #000000;
+}
+  
+menubar > .toolbar-holder {
+  border-top: 0px solid #F5F5F5;
+  border-right: 0px solid #929292;
+  border-bottom: 0px solid #C0C0C0;
+  border-left: 0px solid #F5F5F5;
+}
+menubar {
+
+border: 0px ;
+}
+/* ::::: toolbar decorations ::::: */
+
+toolbarseparator { 
+  margin: 0px 1px;
+  border-right: 1px solid #E6E6E6;
+  border-left: 1px solid #A1A1A1;
+  width: 0px;
+}
+/* tt
+toolbarspacer {
+  width: 15px;
+}
+*/
+/* ::::: toolbarpaletteitem ::::: */
+/* tt
+toolbarpaletteitem {
+  cursor: -moz-grab;
+}
+*/
+.toolbarpaletteitem-box[type="spacer"],
+.toolbarpaletteitem-box[type="spring"] {
+  border: 0px solid #808080;
+}
+
+toolbarpaletteitem[place="toolbar"] {
+  margin-left: -2px;
+  margin-right: -2px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+toolbarpaletteitem[place="toolbar"] > toolbarspacer {
+  width: 11px;
+}
+
+.toolbarpaletteitem-box[type="spacer"][place="toolbar"],
+.toolbarpaletteitem-box[type="spring"][place="toolbar"] {
+  margin: 2px 2px 2px 0;
+}
+
+.toolbarpaletteitem-box[type="separator"][place="palette"] {
+  width: 2px;
+  height: 50px;
+}
+
+.toolbarpaletteitem-box[type="spacer"][place="palette"],
+.toolbarpaletteitem-box[type="spring"][place="palette"] {
+  margin-bottom: 0px;
+  width: 50px;
+  height: 50px;
+}
+
+.toolbarpaletteitem-box[type="spring"][place="palette"] {
+  background: url("chrome://global/skin/toolbar/spacer-mid.gif") no-repeat center;
+}
+
+/* ..... drag and drop feedback ..... */
+
+toolbarpaletteitem[dragover="left"] {
+  border-left-color: #000000;
+}
+
+toolbarpaletteitem[dragover="right"] {
+  border-right-color: #000000;
+}

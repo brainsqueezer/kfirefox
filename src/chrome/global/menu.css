@@ -1,0 +1,406 @@
+
+/* ===== menu.css =======================================================
+  == Styles used by XUL menu-related elements.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: menu/menuitem ::::: */
+
+menu,
+menuitem {
+  -moz-appearance: none !important;
+  -moz-box-align: center;
+  color: MenuText;
+  font: menu;
+/*  list-style-image: none; */
+  -moz-image-region: auto;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+
+}
+menu[disabled="true"], menuitem[disabled="true"],
+menu[_moz-menuactive="true"][disabled="true"],
+menuitem[_moz-menuactive="true"][disabled="true"] {
+  color: GrayText;
+}
+
+ menu {
+/*  -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
+   background: url("chrome://browser/skin/kde4-bg-noline.gif") repeat-x top; */
+ /* background-color: transparent; */
+  border: none;
+padding: 1px !important;
+margin: 0px 3px !important;
+/*  margin-top: -1px !important; */
+/*  padding-top: 1px !important; */
+}
+
+/* ..... internal content .... */
+
+.menu-text,
+.menu-iconic-text {
+  margin: 0px 4px 0px 0px !important;
+  color: inherit;
+}
+
+.menu-text {
+  margin-left: 18px !important;
+  font-weight: inherit;
+}
+
+.menu-description {
+  font-style: italic;
+  color: GrayText;
+  -moz-margin-start: 1ex !important;
+}
+
+.menu-accel,
+.menu-iconic-accel {
+  margin: 0px 2px 0px 2px !important;
+  padding-right: 10px;
+  color: inherit;
+}
+
+.menu-iconic-left {
+  margin: 0px 4px 0px -2px !important;
+  color: inherit;
+}
+
+.menu-iconic-icon {
+  width: 16px;
+  height: 16px;
+  list-style-image: inherit;
+}
+
+menuitem[type="checkbox"] > .menu-iconic-left,
+menuitem[type="radio"] > .menu-iconic-left {
+  margin: 0 2px 0 0 !important;
+ }
+
+/* ..... menu arrow box ..... */
+
+.menu-right {
+  margin: 0px 8px 0px 6px;
+  width: 8px;
+  list-style-image: url("chrome://global/skin/icons/menu_arrow.gif");
+  -moz-image-region: auto;
+}
+
+.menu-right[_moz-menuactive="true"] {
+/*  list-style-image: url("chrome://global/skin/menu/menu-arrow-hov.gif"); */
+  -moz-image-region: auto;
+}
+
+.menu-right[disabled="true"] {
+/*  list-style-image: url("chrome://global/skin/menu/menu-arrow-dis.gif") !important; */
+  -moz-image-region: auto;
+}
+
+/* ::::: menu/menuitems in menubar ::::: */
+
+menubar > menu {
+  border: 2px solid transparent;
+}
+menubar > menu[_moz-menuactive="true"][open="true"] {
+  border-width: 3px 1px 1px 3px;
+}
+menubar > menu[_moz-menuactive="true"],
+menubar > menu[_moz-menuactive="true"][open="true"] {
+  color: -moz-menubarhovertext;
+}
+
+/* ..... internal content .... */
+
+.menubar-left {
+  color: inherit;
+}
+
+.menubar-text {
+  margin: 1px 6px 2px 6px !important;
+  color: inherit;
+}
+
+/* ::::: menu/menuitems in popups ::::: */
+
+menupopup > menu,
+popup > menu,
+menupopup > menuitem,
+popup > menuitem {
+  padding: 0px 3px !important;
+  max-width: 42em;
+  min-height: 19px;
+}
+/*
+menupopup > menu[_moz-menuactive="true"],
+menupopup > menuitem[_moz-menuactive="true"],
+popup > menu[_moz-menuactive="true"],
+popup > menuitem[_moz-menuactive="true"] {
+  background-color: -moz-menuhover;
+  color: -moz-menuhovertext;
+}
+
+*/
+
+/* ::::: menu/menuitems in menulist popups ::::: */
+
+.menulist-menupopup > menuitem,
+menulist > menupopup > menuitem,
+.menulist-menupopup > menu,
+menulist > menupopup > menu {
+  padding-right: 25px !important;
+  max-width: none;
+  font: inherit;
+  color: -moz-FieldText;
+}
+
+
+.menulist-menupopup > menuitem > .menu-iconic-left,
+menulist > menupopup > menuitem > .menu-iconic-left,
+.menulist-menupopup > menu > .menu-iconic-left,
+menulist > menupopup > menu > .menu-iconic-left {
+  margin: 0 2px 0 0 !important;
+}
+
+/* ::::: checked menuitems ::::: */
+
+menuitem[checked="true"], 
+menulist > menupopup > menuitem[selected="true"],
+.menulist-menupopup > menuitem[selected="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-check.png");
+  -moz-image-region: auto;
+}
+
+menuitem[checked="true"][disabled="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-check-dis.png");
+  -moz-image-region: auto;
+}
+
+menuitem[checked="true"][_moz-menuactive="true"]:not([disabled="true"]), 
+menulist > menupopup > menuitem[_moz-menuactive="true"][selected="true"]:not([disabled="true"]),
+.menulist-menupopup > menuitem[_moz-menuactive="true"][selected="true"]:not([disabled="true"]) {
+  list-style-image: url("chrome://global/skin/menu/menu-check-hov.png") !important;
+  -moz-image-region: auto;
+}
+
+/* ::::: menuseparator ::::: */
+
+menuseparator {
+  -moz-appearance: none;
+
+ background: url('chrome://global/skin/icons/menu_separator.png') !important;
+  padding: 3px 1px 4px 1px;
+ /*
+mac
+ margin: 0;
+  padding: 0 !important;
+*/
+}
+
+/* ::::: menulist popup ::::: */
+menulist > menupopup {
+  margin: 4px 0px 4px 0px;
+}
+
+/* ::::: autocomplete ::::: */
+
+.autocomplete-history-popup > menuitem {
+  max-width: none !important;
+  font: message-box;
+}
+
+/* ::::: tree column picker ::::: */
+
+.treecell-popupcell-menu {
+  margin-left: -2px;
+  list-style-image: url("chrome://global/skin/columnselect.gif");
+  -moz-image-region: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* File Menu */
+#context-openlink,menuitem[key="key_newNavigator"]{
+  list-style-image: url('chrome://global/skin/cutemenus.png') !important;
+  -moz-image-region: rect(0 112px 16px 96px) !important;
+}
+#context-openlinkintab,menuitem[key="key_newNavigatorTab"]{
+  list-style-image:url('chrome://global/skin/cutemenus.png') !important;
+  -moz-image-region:rect(0 128px 16px 112px);
+}
+#context-sendlink,#context-sendpage,#context-sendimage,#menu_sendLink{
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 64px 16px 48px);
+}
+#menu_saveFrame,#context-savelink,#context-savepage,#context-saveimage,menuitem[command^="cmd_save"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(368px 16px 384px 0);
+}
+menuitem[command="cmd_print"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(304px 16px 320px 0);
+}
+#menu_close,#menu_closeWindow,menuitem[command="cmd_close"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(224px 32px 240px 16px);
+}
+menuitem[label="Close Tab"]{
+-moz-image-region:rect(48px 32px 64px 16px)!important;
+}
+
+#menu_FileQuitItem,menuitem[command^="cmd_quit"]{
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 16px 16px 0);
+}
+
+/* Edit Menu */
+#menu_undo,#context-undo,menuitem[command="cmd_undo"]{
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 48px 16px 32px);
+}
+#menu_redo,#context-redo,menuitem[command="cmd_redo"]{
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 32px 16px 16px);
+}
+#menu_cut,#context-cut,menuitem[key="key_cut"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(320px 16px 336px 0);
+}
+#menu_copy,#context-copy,menuitem[key="key_copy"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(336px 16px 352px 0);
+}
+#menu_paste,#context-paste,menuitem[key="key_paste"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(352px 16px 368px 0);
+}
+#menu_delete,#context-delete,menuitem[key="key_delete"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(272px 16px 288px 0);
+}
+#menu_delete[disabled="true"],#context-delete[disabled="true"],menuitem[key="key_delete"][disabled="true"]{
+  -moz-image-region:rect(272px 32px 288px 16px);
+}
+#menu_find,#context-searchselect{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(224px 16px 240px 0);
+}
+#menu_find[disabled="true"]>.menu-iconic-left,#context-searchselect[disabled="true"]>.menu-iconic-left{
+  -moz-opacity:0.5;
+}
+
+/* View Menu */
+#context-stop,menuitem[key="key_stop"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(112px 16px 128px 0);
+}
+#context-stop[disabled="true"],menuitem[key="key_stop"][disabled="true"]{
+  -moz-image-region:rect(112px 32px 128px 16px);
+}
+#menu_reload,#context-reload,menuitem[key="key_reload"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(128px 16px 144px 0);
+}
+#menu_reload[disabled],#context-reload[disabled="true"],menuitem[key="key_reload"][disabled="true"] {
+  -moz-image-region:rect(128px 32px 144px 16px);
+}
+#menu_textReduce,#zoom-out,menuitem[key="key_fullZoomReduce"]{
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 224px 16px 208px);
+}
+#menu_textEnlarge,#zoom-in,menuitem[key="key_fullZoomEnlarge"]{
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 240px 16px 224px);
+}
+#menu_textReset,menuitem[key="key_fullZoomReset"]{}
+
+/* Menu History */
+#context-back,#historyMenuBack,menuitem[key="goBackKb"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(192px 16px 208px 0);
+}
+#context-back[disabled="true"],#historyMenuBack[disabled="true"],menuitem[key="goBackKb"][disabled="true"]{
+  -moz-image-region:rect(192px 32px 208px 16px)!important;
+}
+#context-forward,#historyMenuForward,menuitem[key="goForwardKb"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(208px 16px 224px  0);
+}
+#context-forward[disabled="true"],#historyMenuForward[disabled="true"],menuitem[key="goForwardKb"][disabled="true"]{
+  -moz-image-region:rect(208px 32px 224px 16px);
+}
+#context-home,menuitem[key="goHome"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(288px 16px 304px 0);
+}
+menuitem[key="showAllHistoryKb"]{
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 96px 16px 80px);
+}
+
+/* Bookmarks Menu */
+#context-bookmarkpage,#context-bookmarklink,menuitem[key="addBookmarkAsKb"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(240px 32px 256px 16px);
+}
+menuitem[key="manBookmarkKb"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(160px 16px 176px 0);
+}
+menuitem[key="bookmarkAllTabsKb"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(480px 32px 496px 16px);
+}
+menuitem[key="bookmarkAllTabsKb"][disabled="true"]>.menu-iconic-left{
+  -moz-opacity:0.5;
+}
+
+/* Tools Menu */
+menuitem[key="key_search"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(64px 16px 80px 0);
+}
+menuitem[key="key_search"][disabled="true"]{
+  -moz-image-region:rect(64px 32px 80px 16px);
+}
+menuitem[key="key_openDownloads"]{
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 160px 16px 144px);
+}
+menuitem[command="Tools:Addons"],#menu_openAddons{
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 256px 16px 240px);
+}
+#menu_preferences,#context-customize,menuitem[label^="Customize"],menuitem[label="Properties"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(96px 16px 112px 0);
+}
+#javascriptConsole {
+  list-style-image:url('chrome://global/skin/icons/warning-16.png');
+}
+#tb-chatzilla-menu {
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 272px 16px 256px);
+}
+#menu_inspector {
+  list-style-image:url('chrome://global/skin/cutemenus.png');
+  -moz-image-region:rect(0 288px 16px 272px);
+}
+
+/* Help Menu */
+#menu_openHelp,#menu_HelpPopup,menuitem[label^="Help"]{
+  list-style-image:url('chrome://global/skin/global.png');
+  -moz-image-region:rect(32px 16px 48px 0);
+}
+

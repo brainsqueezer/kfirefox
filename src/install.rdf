@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$XTDyQ1"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="3.0b5"
+                   em:maxVersion="3.1a2pre" />
+  <RDF:Description RDF:about="rdf:#$0UDyQ1"
+                   em:id="{a463f10c-3994-11da-9945-000d60ca027b}"
+                   em:minVersion="0.7"
+                   em:maxVersion="1.4" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="kde4@ramonantonio.net"
+                   em:version="0.14"
+                   em:name="Kde4 + Firefox3"
+                   em:description="Kde4 Oxygen Theme maintaining Firefox 3 identity"
+                   em:creator="Ramon Antonio Parada"
+                   em:contributor="Based on original theme."
+                   em:homepageURL="http://ramonantonio.net/kde-firefox/"
+                   em:internalName="kde4"
+                   em:updateURL="http://ramonantonio.net/content/xml/kde-firefox_update"
+                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCyrY82Q/utMh3Hh5TchGeUXeeBjRiTtgEeG5/+5mGtGnFIj7mLeH8U4Y2LIGelrhoCt1aMj2Pen5ZgZY00TMunCKUROPLd1LOho7xfq4DY+vDoS3PkRCG7VKOPTvrRHEjlpiJria4NrUopewmVNSeLW5Fm4RPOb5obPIQt4gw9ZwIDAQAB">
+    <em:targetApplication RDF:resource="rdf:#$XTDyQ1"/>
+    <em:targetApplication RDF:resource="rdf:#$0UDyQ1"/>
+  </RDF:Description>
+</RDF:RDF>

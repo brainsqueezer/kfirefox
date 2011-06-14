@@ -1,0 +1,201 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* :::::::::: button :::::::::: */
+
+/*Startcap*/
+button,
+.dialog-button {
+  -moz-appearance: none;
+  min-width: 73px;
+  border: 0px;
+  color: #000;
+  height: 26px;
+  margin-left: 6px;
+  margin-right: 6px;
+  padding-left: 14px;
+  list-style-position: inside;
+  background: url("chrome://global/skin/button/startcap.png") no-repeat top left transparent;
+}
+
+/* Right Endcap and body*/
+button > .button-box,
+.dialog-button > .button-box {
+  border: 0px;
+  height: 26px;
+  padding-right: 14px;
+  background: url("chrome://global/skin/button/endcap.png") no-repeat top right transparent;
+}
+
+/*Button Body*/
+.button-text {
+  text-align: center;
+  margin: 0px !important;
+}
+
+/* :::::::::: focused state ::::::::::  */
+
+/*startcap:focus*/
+button:focus,
+.dialog-button:focus {
+  background: url("chrome://global/skin/button/startcap-focus.png") no-repeat top left transparent;
+}
+
+/*right endcap:focus*/
+button:focus > .button-box,
+.dialog-button:focus > .button-box {
+  background: url("chrome://global/skin/button/endcap-focus.png") no-repeat top right transparent;
+}
+
+
+/* :::::::::: default state ::::::::::  */
+
+/* startcap:default */
+button[default="true"],
+.dialog-button[default="true"] {
+  background: url("chrome://global/skin/button/startcap-active.png") no-repeat top left transparent;
+  color: #000000;
+}
+
+/*right endcap:default*/
+button[default="true"] > .button-box,
+.dialog-button[default="true"] > .button-box {
+  background: url("chrome://global/skin/button/endcap-active.png") no-repeat top right transparent;
+}
+
+
+/* :::::::::: active state :::::::::: */
+
+/*left endcap:active */
+button:active,
+.dialog-button:active {
+  background: url("chrome://global/skin/button/startcap-active.png") no-repeat top left transparent;
+}
+
+/*right endcap:active*/
+button:active > .button-box,
+.dialog-button:active > .button-box {
+  background: url("chrome://global/skin/button/endcap-active.png") no-repeat top right transparent;
+}
+
+/* :::::::::: hover state ::::::::::  */
+
+/*startcap:hover*/
+button:hover,
+.dialog-button:hover {
+  background: url("chrome://global/skin/button/startcap-focus.png") no-repeat top left transparent;
+}
+
+/*right endcap:hover*/
+button:hover > .button-box,
+.dialog-button:hover > .button-box {
+  background: url("chrome://global/skin/button/endcap-focus.png") no-repeat top right transparent;
+}
+
+/* :::::::::: disabled state :::::::::: */
+
+/*left endcap:disabled */
+button[disabled="true"],
+.dialog-button[disabled="true"] {
+  color: #a9a9a9; /* */
+  background: url("chrome://global/skin/button/startcap-disabled.png") no-repeat top left transparent;
+}
+
+/*right endcap*/
+button[disabled="true"] > .button-box,
+.dialog-button[disabled="true"] > .button-box {
+  background: url("chrome://global/skin/button/endcap-disabled.png") no-repeat top right transparent;
+}
+
+
+/* ::::: menu/menu-button buttons ::::: */
+
+button[type="menu-button"]  {
+  -moz-appearance: none !important;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 0;
+  border: none;
+}
+
+.button-menu-dropmarker,
+.button-menubutton-dropmarker {
+  margin: 1px;
+  background-image: url("chrome://global/skin/arrow/arrow-dn.png") no-repeat;
+  min-width:11px;
+  min-height:11px;
+}
+  
+.button-menu-dropmarker[disabled="true"],
+.button-menubutton-dropmarker[disabled="true"] {
+  background-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
+}
+
+.button-menubutton-dropmarker[open="true"] {
+  margin: 2px 0px 0px 2px;
+}
+
+/* ::::: plain buttons ::::: */
+
+button.plain {
+  border: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+button[type="disclosure"] {
+  border: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  -moz-appearance: none;
+  list-style-image: url("chrome://global/skin/tree/twisty-clsd.png");
+  min-width: 0px !important;
+  background-color: transparent;
+}
+
+button[type="disclosure"][open="true"] {
+  list-style-image: url("chrome://global/skin/tree/twisty-open.png"); 
+}
+
+#BrowserPreferences prefpane .spinbuttons-button > .button-box,
+#BrowserPreferences prefpane .spinbuttons-button:hover > .button-box {
+  width: 9px;
+  padding: 0px;
+  background: none;
+}
+
+#BrowserPreferences prefpane .spinbuttons-button[anonid="increaseButton"],
+#BrowserPreferences prefpane .spinbuttons-button[anonid="increaseButton"]:hover {
+  background: url("chrome://global/skin/arrow/arrow-up-sharp.gif") no-repeat center;
+}
+
+#BrowserPreferences prefpane .spinbuttons-button[anonid="decreaseButton"],
+#BrowserPreferences prefpane .spinbuttons-button[anonid="decreaseButton"]:hover {
+  background: url("chrome://global/skin/arrow/arrow-dn-sharp.gif") no-repeat top;
+}
+
+textbox button, textbox button > .button-box,
+textbox button:hover, textbox button:hover > .button-box,
+textbox button:focus, textbox button:focus > .button-box,
+#history-panel button, #history-panel button > .button-box,
+#downloadManager button, #downloadManager button > .button-box,
+#identity-popup-more-info-button > .button-box,
+#editBookmarkPanel button, #editBookmarkPanel button > .button-box,
+button[class="expander-up"], button[class="expander-up"] > .button-box,
+button[class="expander-down"], button[class="expander-down"] > .button-box,
+button[id="infoBoxExpander"], button[id="infoBoxExpander"] > .button-box,
+button[id="navigator-throbber"], button[id="navigator-throbber"] > .button-box,
+notification button, notification button > .button-box, 
+notification button:hover > .button-box, notification button:focus > .button-box,
+#extensionsManager:not([chromehidden]) #commandBarBottom button,
+#extensionsManager:not([chromehidden]) #commandBarBottom button > .button-box {
+  height: 19px;
+  padding: 0px;
+  background: none transparent;
+}
+
+#editBookmarkPanel button[class="expander-up"],
+#editBookmarkPanel button[class="expander-down"] {
+  width: 29px;
+  margin: 5px 6px !important;
+  -moz-padding-start: 0 !important;
+}

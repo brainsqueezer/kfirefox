@@ -1,0 +1,27 @@
+         \                                                                                                                                  
+
+make[3]: Leaving directory `/var/cache/apt-build/build/xulrunner-1.9.0.1/xulrunner/app'
+rm -rf _java /no-such-file                                                             
+rm -f .md  .bak core     Templates.DB            LOGS TAGS a.out         so_locations _gen _stubs                 \
+        Makefile .HSancillary \                                                                                    
+           \                                                                                                       
+          \                                                                                                        
+
+make[2]: Leaving directory `/var/cache/apt-build/build/xulrunner-1.9.0.1/xulrunner'
+rm -rf dist _javagen _profile _tests staticlib _java /no-such-file
+rm -f .md  .bak core     Templates.DB            LOGS TAGS a.out         so_locations _gen _stubs                 \
+        Makefile .HSancillary \
+           \
+          \
+
+cat unallmakefiles | /usr/bin/xargs rm -f
+rm -f unallmakefiles config.cache config.log config.status config-defs.h dependencies.beos config/autoconf.mk config/myrules.mk config/myconfig.mk unallmakefiles mozilla-config.h netwerk/necko-config.h xpcom/xpcom-config.h xpcom/xpcom-private.h ./.mozconfig.mk ./.mozconfig.out
+make[1]: Leaving directory `/var/cache/apt-build/build/xulrunner-1.9.0.1'
+for dir in build/autoconf; do \
+                for file in config.guess config.sub; do \
+                        sed -i '2!b;/^exec "/ d' $dir/$file; \
+                done; \
+        done
+dh_clean
+Error while building xulrunner-1.9!
+Sorry, no package to install.
